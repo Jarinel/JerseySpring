@@ -1,4 +1,4 @@
-package ru.jarinel.resource;
+package ru.jarinel.server.resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
  * Created by Jarinel on 05.12.2015.
  */
 
-@Path("test")
+@Path("sample")
 @Component
 public class SampleResource {
 

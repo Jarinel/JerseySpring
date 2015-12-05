@@ -1,14 +1,13 @@
-package ru.jarinel.app;
+package ru.jarinel.server.app;
 
 import org.glassfish.jersey.server.ResourceConfig;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoader;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
-import ru.jarinel.config.SampleConfig;
+import ru.jarinel.server.config.SampleConfig;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -32,7 +31,6 @@ public class JerseyApplication extends ResourceConfig implements WebApplicationI
         servletContext.setInitParameter(ContextLoader.CONTEXT_CLASS_PARAM, AnnotationConfigWebApplicationContext.class.getName());
 
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-//        context.register(SampleConfig.class);
         context.setConfigLocation("ru.jarinel.config");
         context.setServletContext(servletContext);
 
